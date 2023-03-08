@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  fetch("https://tickethack-backend-lake.vercel.app/bookings")
+  fetch("https://tickethack-backend-lake.vercel.app/bookings", {mode: 'no-cors'})
     .then((res) => res.json())
     .then((data) => {
       if (data.result) {

@@ -19,6 +19,7 @@ function addToCart(trips) {
         headers: {
           "Content-Type": "application/json",
         },
+        mode: 'no-cors',
         body: JSON.stringify({departure: bookedTrip.departure, arrival: bookedTrip.arrival, date: bookedTrip.date, price: bookedTrip.price}),
       })
       .then(res => res.json())
@@ -96,6 +97,7 @@ document.querySelector("#btn-block").addEventListener("click", () => {
       headers: {
         "Content-Type": "application/json",
       },
+      mode: 'no-cors',
       body: JSON.stringify(body),
     })
       .then((res) => res.json())

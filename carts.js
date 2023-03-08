@@ -6,7 +6,9 @@ function deleteCartTrip(trips) {
             fetch("https://tickethack-backend-lake.vercel.app/carts", {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
+            mode: 'no-cors',
             body: JSON.stringify({departure: cartTrip.departure, arrival: cartTrip.arrival, date: cartTrip.date, price: cartTrip.price}),
+
       })
         .then(res => res.json())
         .then(data => {
@@ -33,6 +35,7 @@ function addToBookings(trips) {
           headers: {
             "Content-Type": "application/json",
           },
+          mode: 'no-cors',
           body: JSON.stringify({departure: purchasedTrip.departure, arrival: purchasedTrip.arrival, date: purchasedTrip.date, price: purchasedTrip.price}),
         })
         .then(res => res.json())
@@ -43,6 +46,7 @@ function addToBookings(trips) {
                 headers: {
                     "Content-Type": "application/json",
                   },
+                  mode: 'no-cors',
             })
               // Redirect to bookings page
               window.location = './bookings.html'
@@ -66,7 +70,7 @@ function addToBookings(trips) {
     rowCartTotalElement.style.display = "none"
     textCartElement.style.display = "none"
   noTicketElement.style.display = "block"
-    fetch("https://tickethack-backend-lake.vercel.app/carts")
+    fetch("https://tickethack-backend-lake.vercel.app/carts", {mode: 'no-cors'})
         .then(res => res.json())
         .then(data => {
             if (data.data.length > 0) {

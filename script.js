@@ -14,7 +14,7 @@ function addToCart(trips) {
   for (let i = 0; i < bookBtn.length; i++) {
     bookBtn[i].addEventListener("click", () => {
     const bookedTrip = trips.data[i]
-      fetch("http://tickethack-backend-lake.vercel.app/carts", {
+      fetch("https://tickethack-backend-lake.vercel.app/carts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ document.querySelector("#btn-block").addEventListener("click", () => {
       arrival: arrival,
       date: date,
     };
-    fetch("http://tickethack-backend-lake.vercel.app/trips", {
+    fetch("https://tickethack-backend-lake.vercel.app/trips", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

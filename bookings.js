@@ -1,5 +1,9 @@
 window.addEventListener("load", (event) => {
-  fetch("https://tickethack-backend-lake.vercel.app/bookings", {mode: 'no-cors'})
+  fetch("https://tickethack-backend-lake.vercel.app/bookings", {
+    headers: {"Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:8080",
+          },
+  })
     .then((res) => res.json())
     .then((data) => {
       if (data.result) {

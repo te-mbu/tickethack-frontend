@@ -18,6 +18,7 @@ function addToCart(trips) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://localhost:8080",
         },
         
         body: JSON.stringify({departure: bookedTrip.departure, arrival: bookedTrip.arrival, date: bookedTrip.date, price: bookedTrip.price}),
@@ -96,6 +97,7 @@ document.querySelector("#btn-block").addEventListener("click", () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "http://localhost:8080",
       },
       
       body: JSON.stringify(body),

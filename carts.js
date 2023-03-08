@@ -5,9 +5,7 @@ function deleteCartTrip(trips) {
             const cartTrip = trips[i]
             fetch("https://tickethack-backend-lake.vercel.app/carts", {
             method: "DELETE",
-            headers: {"Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:8080",
-          },
+            headers: {"Content-Type": "application/json"},
             
             body: JSON.stringify({departure: cartTrip.departure, arrival: cartTrip.arrival, date: cartTrip.date, price: cartTrip.price}),
 
@@ -32,7 +30,7 @@ function addToBookings(trips) {
     for (let i = 0; i < bookingChoices.length; i++) {
       document.querySelector("#btn-purchase").addEventListener("click", () => {
       const purchasedTrip = trips.data[i]
-        fetch("https://tickethack-backend-lake.vercel.app/bookings", {
+        fetch("hack-backend-lake.vercel.app/bookings", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -47,9 +45,7 @@ function addToBookings(trips) {
             fetch("https://tickethack-backend-lake.vercel.app/carts/all", {
                 method: "DELETE",
                 headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "http://localhost:8080",
-                  },
+                    "Content-Type": "application/json"},
                   
             })
               // Redirect to bookings page
@@ -75,9 +71,7 @@ function addToBookings(trips) {
     textCartElement.style.display = "none"
   noTicketElement.style.display = "block"
     fetch("https://tickethack-backend-lake.vercel.app/carts", {
-      headers: {"Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:8080",
-          },
+      headers: {"Content-Type": "application/json"},
     })
         .then(res => res.json())
         .then(data => {

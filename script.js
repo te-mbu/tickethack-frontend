@@ -17,10 +17,7 @@ function addToCart(trips) {
       fetch("https://tickethack-backend-lake.vercel.app/carts", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "http://localhost:8080",
-        },
-        
+          "Content-Type": "application/json"},
         body: JSON.stringify({departure: bookedTrip.departure, arrival: bookedTrip.arrival, date: bookedTrip.date, price: bookedTrip.price}),
       })
       .then(res => res.json())
@@ -96,10 +93,7 @@ document.querySelector("#btn-block").addEventListener("click", () => {
     fetch("https://tickethack-backend-lake.vercel.app/trips", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:8080",
-      },
-      
+        "Content-Type": "application/json"},
       body: JSON.stringify(body),
     })
       .then((res) => res.json())

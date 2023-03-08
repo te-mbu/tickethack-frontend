@@ -3,7 +3,7 @@ function deleteCartTrip(trips) {
     for (let i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener("click", () => {
             const cartTrip = trips[i]
-            fetch("http://localhost:3000/carts", {
+            fetch("https://tickethack-backend-lake.vercel.app/carts", {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({departure: cartTrip.departure, arrival: cartTrip.arrival, date: cartTrip.date, price: cartTrip.price}),
@@ -28,7 +28,7 @@ function addToBookings(trips) {
     for (let i = 0; i < bookingChoices.length; i++) {
       document.querySelector("#btn-purchase").addEventListener("click", () => {
       const purchasedTrip = trips.data[i]
-        fetch("http://localhost:3000/bookings", {
+        fetch("https://tickethack-backend-lake.vercel.app/bookings", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function addToBookings(trips) {
         .then(res => res.json())
         .then(data => {
           if (data.result) {
-            fetch("http://localhost:3000/carts/all", {
+            fetch("https://tickethack-backend-lake.vercel.app/carts/all", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function addToBookings(trips) {
     rowCartTotalElement.style.display = "none"
     textCartElement.style.display = "none"
   noTicketElement.style.display = "block"
-    fetch("http://localhost:3000/carts")
+    fetch("https://tickethack-backend-lake.vercel.app/carts")
         .then(res => res.json())
         .then(data => {
             if (data.data.length > 0) {

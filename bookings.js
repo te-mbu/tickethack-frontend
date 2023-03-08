@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  fetch("http://localhost:3000/bookings")
+  fetch("https://tickethack-backend-lake.vercel.app/bookings")
     .then((res) => res.json())
     .then((data) => {
       if (data.result) {

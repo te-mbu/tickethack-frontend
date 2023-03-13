@@ -93,7 +93,8 @@ document.querySelector("#btn-block").addEventListener("click", () => {
     fetch("https://tickethack-backend-alpha.vercel.app/trips", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"},
+        "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "https://tickethack-backend-alpha.vercel.app/trips"},
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
